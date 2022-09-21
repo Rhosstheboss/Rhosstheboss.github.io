@@ -5,12 +5,25 @@
     <title>Rhoss Knows Best</title>
     <style>
         body {
+            font-family: cursive;
+
             background-image: url("sunset.jpeg");
-            background: url("sunset.jpeg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+            background: url("sunset.jpeg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+
+        nav {
+            background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwcNBwcNBwcHBw0HBw0HDQgHBw8ICQgNFREWFiARHx8YKDQhJBo3HxUXLTEhJSovLi4uFx8zOD8sNyw+LisBCgoKDQ0NDg0NDjcfFRk3Kzc3KysrKzcrLSstKy0rNysrNzcvLSsrNystLSsrNys3Kys3Ky0rLS0uLSstNy0rK//AABEIAKgBLAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAABAAIG/8QAHxABAQACAQQDAAAAAAAAAAAAAAERIQIiMUFRAxJh/8QAGAEBAQEBAQAAAAAAAAAAAAAAAgEGBQD/xAAXEQEBAQEAAAAAAAAAAAAAAAAAARFh/9oADAMBAAIRAxEAPwDqkk7rSJIPPIVUPJaqzVQoWqs01mqFqoQpDaqyhaoWqhC1RtFCFULVQmaoWqiqhRtTNqtChamTWao2qhBQtVZqoqhaqyazVG1UVCqFqoqrNUbVQgoWutSTnNWmaay8lQqtChaBVaFG1Mms1QtVCoqjaKFRSC1Vks1QtVCFUbVWaqFC1Cqs1RtVCFULUzVQoWoVUKNooqtFULVWTWao2qhUVQtVZVFqhaqEMqNrrwqy5rWVCqhRtTNNZULUKqFG0UVUVQtVZprKhaqFRVG0UIEFqCrNUbVQqKoWqs1CqFqoqoUbQKqFC1M2msqNqoQULUzUFC1Cqs1RtVoQqhaqyqlG119FTNc1rLVRUKo2iiqhQtTNNZULUKqFG1M1UKFqFVCjaBVRaoWqslm1QtVoqFUbRRVQQWoVMqFqFqtCjaBVQoWqiqhRtAqoqhaqzVQoWoVUKNooQULXX0IVzWttVCZqhahVQo2gVUKFqFVZULVRVQo2pmms1QtVCFUbVWVRVC1Mms0htQQqhaqzTWaoWqs01mqNqFVFULUzTWVC1C1UKNoFVoULUzTWao2qhUKFrr6EK5rW2qs0s1QtQtVZqjaqKhVC1M01lQtQqCjamVRVC1M01lRtVCFULRQhVC1WhM1RtVFQULUyWaQWoIVRtAqoULUKqzVG1CqhQtTNVChaqMqhRtdfRUzXNa21UIVQtVCZqhaqKhVG0BCqFqotVChaBaqKo2qs1UVQtVCCjaKEKoWqsoVRtVFQpBaKEKoWqiqs1RtQqFULQLVQoWoVUKNoFVChamTQo2uvrJZtc1rLVQhVG0UVCqFqoQqjaKKqFC1M2msqFqCoqjaKFQoWpmms1QtVFVFUbRQqKoWqhUVRtFCFULRaCzVC1UJmkNqoqFULVWaazVG1Cq0KFqZyqFG12FZVFcxrLVWSzVC1UIUhtVZpZULUKqzVG1CqhQtTNVCjahaqFC1M1WiqFqrJZUbVQgoWpk1mqFqoQqjaKFRVC1Vmms0htVFVFULRRUFC1C1WsqNqSSi60VUOY1lqrKChaqFRSG0UIVQtVZprNULVRVQo2pmoKFqFqrKjaqEFC1M1UKFqFVFUbRaFRVC1Vmms1RtVCFULVWahVC1UJmqNqFVFILUEnhSSV51dFSc1qqGakoUUJKNZoSUKyKkQ0BJQrNFSUKyKko0CpKFZFSUKKzUlGgVJQorKSjRQEoUWhJQooCUaKeON59e8JKKn0xu8rd6mjZ8e+q3Ge07lJnXtGOHu3Xjyzyxnpzj9SXEf/9k=);
+            background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwcNBwcNBwcHBw0HBw0HDQgHBw8ICQgNFREWFiARHx8YKDQhJBo3HxUXLTEhJSovLi4uFx8zOD8sNyw+LisBCgoKDQ0NDg0NDjcfFRk3Kzc3KysrKzcrLSstKy0rNysrNzcvLSsrNystLSsrNys3Kys3Ky0rLS0uLSstNy0rK//AABEIAKgBLAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAABAAIG/8QAHxABAQACAQQDAAAAAAAAAAAAAAERIQIiMUFRAxJh/8QAGAEBAQEBAQAAAAAAAAAAAAAAAgEGBQD/xAAXEQEBAQEAAAAAAAAAAAAAAAAAARFh/9oADAMBAAIRAxEAPwDqkk7rSJIPPIVUPJaqzVQoWqs01mqFqoQpDaqyhaoWqhC1RtFCFULVQmaoWqiqhRtTNqtChamTWao2qhBQtVZqoqhaqyazVG1UVCqFqoqrNUbVQgoWutSTnNWmaay8lQqtChaBVaFG1Mms1QtVCoqjaKFRSC1Vks1QtVCFUbVWaqFC1Cqs1RtVCFULUzVQoWoVUKNooqtFULVWTWao2qhUVQtVZVFqhaqEMqNrrwqy5rWVCqhRtTNNZULUKqFG0UVUVQtVZprKhaqFRVG0UIEFqCrNUbVQqKoWqs1CqFqoqoUbQKqFC1M2msqNqoQULUzUFC1Cqs1RtVoQqhaqyqlG119FTNc1rLVRUKo2iiqhQtTNNZULUKqFG1M1UKFqFVCjaBVRaoWqslm1QtVoqFUbRRVQQWoVMqFqFqtCjaBVQoWqiqhRtAqoqhaqzVQoWoVUKNooQULXX0IVzWttVCZqhahVQo2gVUKFqFVZULVRVQo2pmms1QtVCFUbVWVRVC1Mms0htQQqhaqzTWaoWqs01mqNqFVFULUzTWVC1C1UKNoFVoULUzTWao2qhUKFrr6EK5rW2qs0s1QtQtVZqjaqKhVC1M01lQtQqCjamVRVC1M01lRtVCFULRQhVC1WhM1RtVFQULUyWaQWoIVRtAqoULUKqzVG1CqhQtTNVChaqMqhRtdfRUzXNa21UIVQtVCZqhaqKhVG0BCqFqotVChaBaqKo2qs1UVQtVCCjaKEKoWqsoVRtVFQpBaKEKoWqiqs1RtQqFULQLVQoWoVUKNoFVChamTQo2uvrJZtc1rLVQhVG0UVCqFqoQqjaKKqFC1M2msqFqCoqjaKFQoWpmms1QtVFVFUbRQqKoWqhUVRtFCFULRaCzVC1UJmkNqoqFULVWaazVG1Cq0KFqZyqFG12FZVFcxrLVWSzVC1UIUhtVZpZULUKqzVG1CqhQtTNVCjahaqFC1M1WiqFqrJZUbVQgoWpk1mqFqoQqjaKFRVC1Vmms0htVFVFULRRUFC1C1WsqNqSSi60VUOY1lqrKChaqFRSG0UIVQtVZprNULVRVQo2pmoKFqFqrKjaqEFC1M1UKFqFVFUbRaFRVC1Vmms1RtVCFULVWahVC1UJmqNqFVFILUEnhSSV51dFSc1qqGakoUUJKNZoSUKyKkQ0BJQrNFSUKyKko0CpKFZFSUKKzUlGgVJQorKSjRQEoUWhJQooCUaKeON59e8JKKn0xu8rd6mjZ8e+q3Ge07lJnXtGOHu3Xjyzyxnpzj9SXEf/9k=) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
         }
     </style>
 </head>
@@ -20,6 +33,20 @@
     <div>
 
         <nav>
+            <h1>Rhoss's Bizzare Website</h1>
+            <ul>
+                <li>
+                    <a href="index.html"> Home </a>
+                </li>
+                <li>
+                    <a href="portfolio.html"> Portfolio </a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div>
+
+            </div>
             <h1>Rhoss the Bhoss</h1>
             <!-- content -->
             <div>
@@ -38,14 +65,14 @@
                 </div>
             </div>
             <!-- side bar -->
-          
+
             <h3>Some of my favorite Spotify Albums</h3>
             <ul>
                 <li>
                     <a>
                         <iframe style="border-radius:12px"
                             src="https://open.spotify.com/embed/album/79ONNoS4M9tfIA1mYLBYVX?utm_source=generator"
-                            width="100%" height="380" frameBorder="0" allowfullscreen=""
+                            width="20%" height="380" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </a>
@@ -54,7 +81,7 @@
                     <a>
                         <iframe style="border-radius:12px"
                             src="https://open.spotify.com/embed/album/0PHMNbcgHfzSUALlfk7wGg?utm_source=generator"
-                            width="100%" height="380" frameBorder="0" allowfullscreen=""
+                            width="20%" height="380" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </a>
@@ -63,15 +90,11 @@
                     <a>
                         <iframe style="border-radius:12px"
                             src="https://open.spotify.com/embed/album/2WfV3cpI2BUuIxMISh9nqF?utm_source=generator"
-                            width="100%" height="380" frameBorder="0" allowfullscreen=""
+                            width="20%" height="380" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </a>
                 </li>
-            </ul>
-
-        </nav>
-        <main>
 
 
         </main>
