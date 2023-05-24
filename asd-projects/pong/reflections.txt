@@ -1,0 +1,55 @@
+Describe the gameplay:
+- Two paddles are bouncing a ball back a forth
+What are the conditions when the game begins?
+- The game beings when one player moves their paddle
+Does the game have an end? If so, what are the conditions for when it ends?
+- When one player gets to 11 points
+What ifs will there be?
+- If the ball crosses over the board edge, then the opposite player earns a point.
+- If the ball hits the bottom or top of the board, reverse its direction
+- If the ball hits the paddle, reverse the direction of the ball
+- If player hits up or down arrow key, move the paddle in that right direction
+- If a player scores 11 points, end the game a show the winner
+- If the ball hits one of the paddles, increase ball speed
+- If the paddle hits the top or bottom edge of the board, stop the paddle
+- If the ball hits, board edge, return the ball to the middle of the board and reset speed
+
+Visual game components:
+What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+- two paddles a ball the black background the dotted line in the middle
+Which will be static? (the board)
+- the board and line
+Which will be animated? (the box)
+the ball and the paddles
+What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+- positionX positionY speedX speedY
+
+Events/Logic:
+What events will occur in this game? (timer events, keyboard events, clicking events?)
+- keydown keyup ball touching the paddle
+How do those events affect the data of the program?
+- move the paddles
+- one player uses keys other player uses other
+For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+- $(document).on("keydown", handleKeyDown)
+handleKeyDown(event){
+    (even.which === key.up){
+        move paddle up
+        increase position y
+        maybe we will decrease the "top" css position 
+    }
+}
+
+(event.which === key.down){
+    move paddle down
+    adjust postition y
+}
+
+when the ball hits the paddle{
+change the direction of the ballincrease speed of the ball
+}
+
+- score will be in the middle of the half of the board for e3ach side
+- scoreboard will tick up by one
+- score ticks up after the ball passes the edge
+- when ball goes past right side left score ticks up and vice versa
