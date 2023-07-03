@@ -27,6 +27,7 @@ body {
   background-color: white;
   position: relative;
   border-radius: 100px;
+  left:1px;
   top: 260px;
 }
 
@@ -37,7 +38,7 @@ body {
   background-color: white;
   position: relative;
   border-radius: 100px;
-  left: 780px;
+  left: 777px;
   top: 110px;
 }
 

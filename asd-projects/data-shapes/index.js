@@ -82,7 +82,7 @@ $(document).ready(function () {
 
   function staticDisplay() {
     // TODO 3-b: call your handleStatic function
-    handleStatic(shape)
+    handleStatic(currentShape)
   }
 
   function goodDisplay() {
@@ -93,11 +93,11 @@ $(document).ready(function () {
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    var currentShape = currentIndex
+    var currentShape = "circle"
 
     var repeat = 3
 
-    handleBad("circle", 3)
+    handleBad(currentShape, repeat)
   }
   /////////////////////////////////////////////////
   // ALL OF YOUR CODE SHOULD GO ABOVE HERE ////////
