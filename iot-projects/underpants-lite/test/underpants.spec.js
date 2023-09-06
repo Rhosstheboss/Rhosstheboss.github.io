@@ -7,6 +7,10 @@ const
 
 describe('Underpants Lite', function() {
 
+  function typeOf(fun){
+    return _.typeOf('a') = ("string")
+  }
+
   describe('typeOf', function() {
     it("Should handle strings", function() {
       expect(_.typeOf("a")).to.equal("string");
