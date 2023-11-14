@@ -120,21 +120,43 @@
           }
 
           function updateWSRecords(value) {
-            if (value > regHighest || value < regLowest) {
-              return regHighest || regLowest === value;
-            } else return $("#reg - chart - container").text("Highest record value is " + 13 || "Lowest record value is " + -13);
+            if (value > wsHighest || value < wsLowest) {
+              return wsHighest || wsLowest === value;
+            } else return $("#ws - chart - container").text("Highest record value is " + 13 || "Lowest record value is " + -13);
             // Update the WebSocket polling records
           }
 
           // TODO 3: Regular Polling
 
-          function doPoll() {}
+          function doPoll(){
+            $.getJSON(
+            "https://f3dc5044859d.ngrok.io/pi/sensors/dht/temperature",
+            function (result){
+              addDataPoint(result, regData, regChart);
+              updateRegRecords(result.value.result)
+              setTimeout(doPoll, 10000);
+            }
+          );
+          }
 
           doPoll();
 
           // TODO 4: WebSocket Polling
           // Create a new WebSocket connection here
+var socket = new WebSocket(
+  "ws://f3dc5044859d.ngrok.io/pi/sensors/dht/temperature"
+);
+socket.onmessage = function (event) {
+  // Fill in the body of the onmessage function
+  var result = JSON.parse(event.data);
+  addDataPoint(result, wsData, wsChart);
+  updateWSRecords(result.value.result)
+};
 
+socket.onerror = function (error) {
+  // Fill in the body of the onerror function
+  console.log(error)
+};
           function getTime() {
             var d = new Date();
             return d.toLocaleTimeString();
