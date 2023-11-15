@@ -10,7 +10,7 @@ const port = 1313;
 http
   .createServer(function (req, res) {
     request(
-      "https://Rhosstheboss.github.io",
+      url,
       function (error, response, body) {
         console.log("here");
         if (
