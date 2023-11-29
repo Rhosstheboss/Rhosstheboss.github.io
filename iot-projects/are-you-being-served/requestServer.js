@@ -1,7 +1,6 @@
 // requestServer.js file
 
 var args = process.argv.slice(2);
-var url = args[0] ? args[0] : "https://Rhosstheboss.github.io/portfolio.html";
 
 const http = require("http");
 const request = require("request");
@@ -10,8 +9,10 @@ const port = 1313;
 http
   .createServer(function (req, res) {
     request(
-      url,
+      "https://Rhosstheboss.github.io",
+      "https://Rhosstheboss.github.io/portfolio.html",
       function (error, response, body) {
+        var url = args[0] ? args[0] : "https://Rhosstheboss.github.io/portfolio.html";
         console.log("here");
         if (
           !body ||
