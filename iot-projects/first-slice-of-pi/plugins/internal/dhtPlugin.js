@@ -30,5 +30,5 @@ exports.start = start;
 function stop(){
 	clearInterval(interval)
 };
-expoerts.stop = stop;
+exports.stop = stop;
 
