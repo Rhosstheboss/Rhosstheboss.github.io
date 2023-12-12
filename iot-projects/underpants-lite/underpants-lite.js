@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+const { result } = require("lodash");
+
 /**
 * START OF OUR LIBRARY!
 * Implement each function below it's instructions
@@ -182,6 +184,15 @@ _.last = function (array, number){
 *   use _.each in your implementation
 */
 
+_.filter = function (arr, fun) {
+    var reulst = [];
+    for (var i = 0; i < arr.length; i++) {
+        var isGood = fun(arr[i], i, arr);
+        if (isGood === true) {
+            result.push(arr[i]);
+        }
+    }
+}
 
 /** _.map
 * Arguments:
