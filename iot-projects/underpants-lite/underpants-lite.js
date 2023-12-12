@@ -192,7 +192,8 @@ _.filter = function (arr, fun) {
             result.push(arr[i]);
         }
     }
-}
+    return result;
+};
 
 /** _.map
 * Arguments:
