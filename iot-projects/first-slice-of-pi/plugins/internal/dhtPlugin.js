@@ -6,10 +6,10 @@ const device = resources.pi.sensors.dht;
 let localParams = {'frequency': 2000};
 
 function connectHardware(){
-	initialize: function(){
+	initialize: function initial(){
 		sensorDriver.initialize(device.model, device.gpio)
-	},
-	read: function(){
+	}
+	read: function temp(){
 		var drive = sensorDriver.read()
 		device.temperature.value = parseFloat(drive.temperature);
 		device.humidity.value = parseFloat(drive.humidity);
@@ -30,5 +30,5 @@ exports.start = start;
 function stop(){
 	clearInterval(interval)
 };
-expoerts.stop = stop;
+exports.stop = stop;
 

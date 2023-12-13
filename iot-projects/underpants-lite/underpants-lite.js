@@ -3,8 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-var _ = {};
-
+const { result } = require("lodash");
 
 /**
 * START OF OUR LIBRARY!
@@ -31,9 +30,15 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
-_.typeof = function(value){
-
-}
+_.typeOf = function (value){
+    if (Array.isArray(value) === true){
+        return "array";
+    }
+    if (value === null){
+        return "null";
+    }
+    return typeof value;
+};
 
 /** _.first
 * Arguments:
@@ -53,6 +58,25 @@ _.typeof = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function (array, number){
+    if (number <= 0){
+        return [];
+    }
+    if (Array.isArray(array) === false){
+        return [];
+    }
+    if (number >= array.length){
+        return array;
+    }
+    if (typeof number !== "number"){
+        return array [0];
+    }
+    var result = [];
+    for (var i = 0; i < number; i++){
+        result.push(array[i]);
+    }
+    return result;
+}
 
 /** _.last
 * Arguments:
@@ -72,6 +96,25 @@ _.typeof = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function (array, number){
+    if (number <= 0){
+        return [];
+    }
+    if (Array.isArray(array) === false){
+        return [];
+    }
+    if (number >= array.length){
+        return array;
+    }
+    if (typeof number !== "number"){
+        return array[array.length - 1];
+    }
+    var result = [];
+    for (var i = array.length, number; i < array.length; i++){
+        result.push(array[i]);
+    }
+    return result;
+}
 
 /** _.indexOf
 * Arguments:
@@ -104,6 +147,7 @@ _.typeof = function(value){
 *   _.contains([1,"two", 3.14], "two") -> true
 *   _.contains([1,"two", 3.14], "three") -> false
 */
+
 
 
 /** _.each
@@ -140,6 +184,16 @@ _.typeof = function(value){
 *   use _.each in your implementation
 */
 
+_.filter = function (arr, fun) {
+    var reulst = [];
+    for (var i = 0; i < arr.length; i++) {
+        var isGood = fun(arr[i], i, arr);
+        if (isGood === true) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+};
 
 /** _.map
 * Arguments:
@@ -253,6 +307,15 @@ _.typeof = function(value){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function (array, property){
+    var feathers = [];
+    for (var i = 0; i < array.length; i++){
+        if (property === array[i]){
+            var check = map(array[i]);
+            feathers.push(check);
+        }
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
