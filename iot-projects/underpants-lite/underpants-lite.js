@@ -3,7 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-const { result } = require("lodash");
+const { result, typeOf } = require("lodash");
 
 /**
 * START OF OUR LIBRARY!
@@ -30,11 +30,11 @@ const { result } = require("lodash");
 * _.typeOf([1,2,3]) -> "array"
 */
 
-_.typeOf = function (value){
-    if (Array.isArray(value) === true){
+_.typeOf = function (value) {
+    if (Array.isArray(value) === true) {
         return "array";
     }
-    if (value === null){
+    if (value === null) {
         return "null";
     }
     return typeof value;
@@ -58,21 +58,21 @@ _.typeOf = function (value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-_.first = function (array, number){
-    if (number <= 0){
+_.first = function (array, number) {
+    if (number <= 0) {
         return [];
     }
-    if (Array.isArray(array) === false){
+    if (Array.isArray(array) === false) {
         return [];
     }
-    if (number >= array.length){
+    if (number >= array.length) {
         return array;
     }
-    if (typeof number !== "number"){
-        return array [0];
+    if (typeof number !== "number") {
+        return array[0];
     }
     var result = [];
-    for (var i = 0; i < number; i++){
+    for (var i = 0; i < number; i++) {
         result.push(array[i]);
     }
     return result;
@@ -96,21 +96,21 @@ _.first = function (array, number){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
-_.last = function (array, number){
-    if (number <= 0){
+_.last = function (array, number) {
+    if (number <= 0) {
         return [];
     }
-    if (Array.isArray(array) === false){
+    if (Array.isArray(array) === false) {
         return [];
     }
-    if (number >= array.length){
+    if (number >= array.length) {
         return array;
     }
-    if (typeof number !== "number"){
+    if (typeof number !== "number") {
         return array[array.length - 1];
     }
     var result = [];
-    for (var i = array.length, number; i < array.length; i++){
+    for (var i = array.length, number; i < array.length; i++) {
         result.push(array[i]);
     }
     return result;
@@ -132,6 +132,16 @@ _.last = function (array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (value === array[i]) {
+            return i;
+        }
+    }
+    if (value !== array[i]) {
+        return -1;
+    }
+};
 
 /** _.contains
 * Arguments:
@@ -166,6 +176,21 @@ _.last = function (array, number){
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function (collection, func) {
+    if (_.typeOf(collection) === "array") {
+        for (var i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }
+    }
+    if (_.typeOf(collection) === "object") {
+        for (var i = 0; i < array.length; i++) {
+            func(collection[i], collection.key(i), collection[i]);
+        }
+    }
+    if (_.typeOf(collection) = "object") {
+
+    }
+};
 
 /** _.filter
 * Arguments:
@@ -192,7 +217,8 @@ _.filter = function (arr, fun) {
             result.push(arr[i]);
         }
     }
-}
+    return result;
+};
 
 /** _.map
 * Arguments:
@@ -211,6 +237,24 @@ _.filter = function (arr, fun) {
 *   _.map([1,2,3,4], function(e){ return e * 2; }) -> [2,4,6,8]
 */
 
+_.map = function (collection, func) {
+    var result = [];
+
+    if (typeOf(collection) === array) {
+        for (i = 0; i < array.length; i++) {
+            func(collection[i], i, collection[i]);
+            result.push(array[i]);
+        }
+    }
+    if (typeOf(collection) === object) {
+        for (i = 0; i < array.length; i++) {
+            func(collection[i], collection.i, collection[i]);
+            result.push(array[i]);
+        }
+        return result;
+    }
+    return result;
+};
 
 /** _.reject
 * Arguments:
@@ -228,6 +272,17 @@ _.filter = function (arr, fun) {
 *   _.reject([1,2,3,4,5], function(e){ return e%2 === 0}; ) -> [1,3,5]
 */
 
+_.reject = function (arr, func) {
+    var result = []
+
+    for (var i = 0; i < arguments.length; i++) {
+        var isBad = func(arr[i], i, arr);
+        if (isBad === false) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
 
 /** _.partition
 * Arguments:
@@ -248,6 +303,24 @@ _.filter = function (arr, fun) {
 }
 */
 
+_.partition = function (array, func) {
+    var resultT = [];
+    var resultF = [];
+
+    for (var i = 0; i < array.length; i++) {
+        var answer = func(array[i], i, array);
+    }
+    if (answer === true) {
+        resultT.push(array[i]);
+    }
+
+    for (var i = 0; i < array.length; i++) {
+        var answer = func(array[i], i, array);
+    }
+    if (answer === false) {
+        resultF.push(array[i]);
+    }
+};
 
 /** _.every
 * Arguments:
@@ -271,6 +344,30 @@ _.filter = function (arr, fun) {
 *   _.every([1,2,3], function(e){ return e % 2 === 0}; ) -> false
 */
 
+_.every = function (collection, func) {
+    if (typeOf(colection) === array) {
+        for (var i = 1; i < collection.length; i++) {
+            var placeholder = func(collection[i], i, collection);
+            placeholder2.push(placeholder);
+        }
+
+        if (typeOf(collection) === object) {
+            for (i = 0; i < array.length; i++) {
+                var placehol = func(onject[i], object(key(i)), collection[i]);
+                placeholder.push(placehol);
+            }
+        }
+
+        var placeholder2 = [];
+
+        if (placeholder2 === true) {
+            return "true";
+        }
+        if (placeholder === false) {
+            return "false";
+        }
+    }
+}
 
 /** _.some
 * Arguments:
@@ -306,22 +403,22 @@ _.filter = function (arr, fun) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck = function (array, property){
+_.pluck = function (array, property) {
     var feathers = [];
-    for (var i = 0; i < array.length; i++){
-        if (property === array[i]){
+    for (var i = 0; i < array.length; i++) {
+        if (property === array[i]) {
             var check = map(array[i]);
             feathers.push(check);
         }
     }
-}
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = _;
 }
