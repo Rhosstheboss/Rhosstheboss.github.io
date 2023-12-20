@@ -3,7 +3,9 @@ const json2html = require("node-json2html");
 module.exports = function () {
   return function (req, res, next) {
     // TODO 2: Create the converter function
+    console.log('sanity')
     if (req.result) {
+      console.log (req.accepts("html"))
       if (req.accepts("html")) {
         let transform = {'<>': 'div', 'html': [
           {'<>': 'p', 'html': [
@@ -19,7 +21,8 @@ module.exports = function () {
               {'<>': 'p', 'html': '${value}'}
           ]}
       ]};
-        var html = json2html.transform(res.result, transform);
+        var html = json2html.transform(req.result, transform);
+        res.send(html)
       } else {
         res.send(req.result);
       }

@@ -1,6 +1,8 @@
 var pirPlugin = require('./plugins/internal/pirPlugin');
+var dhtPlugin = require('./plugins/internal/dhtPlugin');
 
 pirPlugin.start({});
+dhtPlugin.start({'frequency': 2000});
 
 const httpServer = require('./servers/http'),
 	resources = require('./resources/model');
@@ -11,5 +13,7 @@ const server = httpServer.listen(resources.pi.port, function () {
 
 process.on('SIGINT', function() {
 	pirPlugin.stop();
-	process.exit();
+	dhtPlugin.stop();
+	process.exit()
 });
+
