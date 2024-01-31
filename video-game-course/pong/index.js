@@ -23,8 +23,8 @@
 
   // Variable declarations for the paddles and the ball which are drawn using createJS (see bower_components/opspark-draw/draw.js)
   const
-    paddlePlayer = createPaddle(),
-    paddleCPU = createPaddle({ x: canvas.width - 20, y: canvas.height - 100 }),
+    paddlePlayer = createPaddle({ y: canvas.height - 543 }),
+    paddleCPU = createPaddle({ x: canvas.width - 30, y: canvas.height - 543 }),
     ball = draw.circle(20, '#CCC');
 
   // set initial properties for the paddles 
@@ -34,8 +34,8 @@
   // set initial properties for the ball
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
-  ball.xVelocity = 5;
-  ball.yVelocity = 5;
+  ball.xVelocity = -5;
+  ball.yVelocity = -5;
 
   // add the paddles and the ball to the view
   stage.addChild(paddlePlayer, paddleCPU, ball);
@@ -47,9 +47,9 @@
   // when an Arrow key is pressed down, set the paddle in motion
   function onKeyDown(event) {
     if (event.key === 'ArrowUp') {
-      paddlePlayer.yVelocity = -5;
+      paddlePlayer.yVelocity = -6;
     } else if (event.key === 'ArrowDown') {
-      paddlePlayer.yVelocity = 5;
+      paddlePlayer.yVelocity = 6;
     }
   }
 
@@ -84,21 +84,37 @@
     }
 
     // AI movement: CPU follows ball //
-    if ((paddleCPU.y + midCPU) < (ball.y - 14)) {
+    if ((paddleCPU.y + midCPU) < (ball.y - 14)) { // if paddle is above ball move paddle down
       paddleCPU.y += paddleCPU.yVelocity;
-    } else if ((paddleCPU.y + midCPU) > (ball.y + 14)) {
+    } else if ((paddleCPU.y + midCPU) > (ball.y + 14)) { // if paddle is below ball movel\ paddle up
       paddleCPU.y -= paddleCPU.yVelocity;
     }
 
     // TODO 1: bounce the ball off the top
-
+    if (ball.y < 0){
+      ball.yVelocity = -5 * -1
+    }
+    
 
     // TODO 2: bounce the ball off the bottom
-
+    if (ball.y > 886){
+      ball.yVelocity = 5 * -1
+    }
 
     // TODO 3: bounce the ball off each of the paddles
+    // const ballTop = ball.y - ball.radius; 
+    // const ballBottom = ball.y + ball.radius; 
+    // const ballRight = ball.x + ball.radius; 
+    // const ballLeft = ball.x - ball.radius; 
 
+    // const paddlePlayerTop = paddle.y
+    // const paddlePlayerBottom = paddle.y + paddle.height;
+ 
+    if (ball.x < paddlePlayer.x){
+    ball.xVelocity = -5 * -1
+  }
 
+  
   }
 
   // helper function that wraps the draw.rect function for easy paddle making
