@@ -1,4 +1,4 @@
-(function(window, createjs, opspark, _) {
+(function (window, createjs, opspark, _) {
 
   // Variable declarations for libraries and the game engine
   const
@@ -26,16 +26,15 @@
     paddlePlayer = createPaddle({ y: canvas.height - 543 }),
     paddleCPU = createPaddle({ x: canvas.width - 30, y: canvas.height - 543 }),
     ball = draw.circle(20, '#CCC');
-
   // set initial properties for the paddles 
   paddlePlayer.yVelocity = 0;
-  paddleCPU.yVelocity = 6;
+  paddleCPU.yVelocity = 4;
 
   // set initial properties for the ball
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
-  ball.xVelocity = -5;
-  ball.yVelocity = -5;
+  ball.xVelocity = 5;
+  ball.yVelocity = 5;
 
   // add the paddles and the ball to the view
   stage.addChild(paddlePlayer, paddleCPU, ball);
@@ -47,9 +46,9 @@
   // when an Arrow key is pressed down, set the paddle in motion
   function onKeyDown(event) {
     if (event.key === 'ArrowUp') {
-      paddlePlayer.yVelocity = -6;
+      paddlePlayer.yVelocity = -4;
     } else if (event.key === 'ArrowDown') {
-      paddlePlayer.yVelocity = 6;
+      paddlePlayer.yVelocity = 4;
     }
   }
 
@@ -91,30 +90,68 @@
     }
 
     // TODO 1: bounce the ball off the top
-    if (ball.y < 0){
+    if (ball.y < 0) {
       ball.yVelocity = -5 * -1
+      createjs.Sound.play("wall")
     }
-    
+
 
     // TODO 2: bounce the ball off the bottom
-    if (ball.y > 886){
+    if (ball.y > 886) {
       ball.yVelocity = 5 * -1
+      createjs.Sound.play("wall")
     }
 
     // TODO 3: bounce the ball off each of the paddles
-    // const ballTop = ball.y - ball.radius; 
-    // const ballBottom = ball.y + ball.radius; 
-    // const ballRight = ball.x + ball.radius; 
-    // const ballLeft = ball.x - ball.radius; 
+    ball.top = ball.y - ball.radius;
+    ball.bottom = ball.y + ball.radius;
+    ball.right = ball.x + ball.radius;
+    ball.left = ball.x - ball.radius;
 
-    // const paddlePlayerTop = paddle.y
-    // const paddlePlayerBottom = paddle.y + paddle.height;
- 
-    if (ball.x < paddlePlayer.x){
-    ball.xVelocity = -5 * -1
-  }
+    paddleCPU.top = paddleCPU.y;
+    paddleCPU.bottom = paddleCPU.y + paddleCPU.height;
+    paddleCPU.right = paddleCPU.x + paddleCPU.width;
+    paddleCPU.left = paddleCPU.x
 
-  
+    //checking if top and bottom/ right and left are overlapping
+    var topOverlap = ball.top < paddleCPU.bottom;
+    var bottomOverlap = ball.bottom > paddleCPU.top;
+    var rightOverlap = ball.right > paddleCPU.left;
+    var leftOverlap = ball.left < paddleCPU.right;
+
+    if (topOverlap && bottomOverlap && rightOverlap && leftOverlap) {
+      ball.xVelocity *= -1.05;
+      ball.xVelocity = ball.xVelocity;
+      createjs.Sound.play("hit")
+    }
+
+    paddlePlayer.top = paddlePlayer.y;
+    paddlePlayer.bottom = paddlePlayer.y + paddlePlayer.height;
+    paddlePlayer.right = paddlePlayer.x + paddlePlayer.width;
+    paddlePlayer.left = paddlePlayer.x;
+
+    var topOverlap = ball.top < paddlePlayer.bottom;
+    var bottomOverlap = ball.bottom > paddlePlayer.top;
+    var rightOverlap = ball.right > paddlePlayer.left;
+    var leftOverlap = ball.left < paddlePlayer.right;
+
+    if (topOverlap && bottomOverlap && rightOverlap && leftOverlap) {
+      ball.xVelocity *= -1;
+      ball.xVelocity = ball.xVelocity + 1;
+      createjs.Sound.play("hit")
+    } console.log(canvas.width)
+
+    if (ball.x < 0) {
+      ball.x = canvas.width / 2;
+      ball.y = canvas.height / 2;
+      ball.xVelocity = 5
+    }
+
+    if (ball.x > canvas.width) {
+      ball.x = canvas.width / 2;
+      ball.y = canvas.height / 2;
+      ball.xVelocity = -5
+    }
   }
 
   // helper function that wraps the draw.rect function for easy paddle making
