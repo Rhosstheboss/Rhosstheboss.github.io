@@ -1,124 +1,201 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Rhoss's Random Ranshack</title>
     <style type="text/css">
-        body {
-            background-image: url(https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2021/08/17100816/nine-perfect-strangers-press-art-700x380.jpg);
-            background: url(https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2021/08/17100816/nine-perfect-strangers-press-art-700x380.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+      body {
+        background-image: url(https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2021/08/17100816/nine-perfect-strangers-press-art-700x380.jpg);
+        background: url(https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2021/08/17100816/nine-perfect-strangers-press-art-700x380.jpg)
+          no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 
-            font-family: cursive;
-        }
-        header {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
+        font-family: cursive;
+      }
+      header {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
 
-        #all-contents {
-            max-width: 800px;
-            margin: auto;
-        }
+      #all-contents {
+        max-width: 800px;
+        margin: auto;
+      }
 
-        /* navigation menu */
-        nav {
-            background: rgb(100, 80, 41);
-            margin: 0 auto;
-            display: flex;
-            padding: 0px;
-        }
-        h1 {
-            display: flex;
-            align-items: center;
-            color: rgb(255, 255, 255);
-            flex: 1;
-            margin: 0;
-        }
-        #nav-ul {
-            list-style-image: none;
-        }
-        .nav-li {
-            display: inline-block;
-            padding: 0 10px;
-        }
-        .nav-a {
-            text-decoration: none;
-            color: #fff;
-        }
+      /* navigation menu */
+      nav {
+        background: rgb(100, 80, 41);
+        margin: 0 auto;
+        display: flex;
+        padding: 0px;
+      }
+      h1 {
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        flex: 1;
+        margin: 0;
+      }
+      #nav-ul {
+        list-style-image: none;
+      }
+      .nav-li {
+        display: inline-block;
+        padding: 0 10px;
+      }
+      .nav-a {
+        text-decoration: none;
+        color: #fff;
+      }
 
-        /* main container area beneath menu */
-        main {
-            background: rgb(245, 238, 219);
-            display: flex;
-        }
-        .content {
-            flex: 1;
-            padding: 15px;
-        }
-                 /* portfolio styles */
-                 .content h1 {
-             color: black;
-         }
+      /* main container area beneath menu */
+      main {
+        background: rgb(245, 238, 219);
+        display: flex;
+      }
+      .content {
+        flex: 1;
+        padding: 15px;
+      }
+      /* portfolio styles */
+      .content h1 {
+        color: black;
+      }
 
-         #portfolio {
-             list-style-type: none;
-             padding-left: 0;
-         }
+      #portfolio {
+        list-style-type: none;
+        padding-left: 0;
+      }
 
-         #portfolio li {
-             background: #fff;
-             padding: 10px;
-             border-radius: 10px;
-             margin-bottom: 10px;
-             border-radius: 25% 10%;
-         }
+      #portfolio li {
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border-radius: 25% 10%;
+      }
 
-         #portfolio li:hover {
-             background: #eee;
-         }
+      #portfolio li:hover {
+        background: #eee;
+      }
 
-         #portfolio a {
-             text-decoration: none;
-             color: #454545;
-         }
+      #portfolio a {
+        text-decoration: none;
+        color: #454545;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="all-contents">
-        <nav>
-            <h1>Rhoss's Random Ranshack</h1>
-            <ul id="nav-ul">
-                <li class="nav-li">
-                    <a class="nav-a" href="index.html">Home</a>
-                </li>
-                <li class="nav-li">
-                    <a class="nav-a" href="Portfolio.html">Portfolio</a>
-                </li>
+      <nav>
+        <h1>Rhoss's Random Ranshack</h1>
+        <ul id="nav-ul">
+          <li class="nav-li">
+            <a class="nav-a" href="index.html">Home</a>
+          </li>
+          <li class="nav-li">
+            <a class="nav-a" href="Portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <!-- Nav stuff here...-->
+      </nav>
+      <main>
+        <div class="content">
+          <h1>Portfolio</h1>
+          <ul id="portfolio">
+            <h3>Fundamentals</h3>
+            <li>
+              <a href="projects/platformer/"
+                >Platformer : A cannon - dodging, collectible - grabbing
+                adventure game for Rhoss</a
+              >
+            </li>
+            <li>
+              <a href="projects/bouncing-box/"
+                >Bouncing Box : A project that gives you a taste of game
+                development on the web
+              </a>
+            </li>
+            <li>
+              <a href="projects/circularity/"
+                >Circularity : A motion poem using random number generation and
+                velocity applied to circle shapes...</a
+              >
+            </li>
+            <h3>Advanced</h3>
+            <ul id="portfolio">
+              <li>
+                <a href="asd-projects/data-shapes">Exploring Sets of Shapes</a>
+              </li>
+              <li>
+                <a href="asd-projects/debugging-exercise">Debugging Broken </a>
+              </li>
+              <li>
+                <a href="asd-projects/walker">Walking Around with jQuery</a>
+              </li>
+              <li>
+                <a href="asd-projects/image-filtering"
+                  >Filtering Images with Higher Order Functions</a
+                >
+              </li>
+              <li>
+                <a href="asd-projects/sorting-exercise"
+                  >Exploring Different Sorting Algorithms</a
+                >
+              </li>
+              <li>
+                <a href="asd-projects/snake">Classic Snake Game Rebuilt</a>
+              </li>
             </ul>
-        </nav>
-        <nav>
-            <!-- Nav stuff here...-->
-        </nav>
-        <main>
-            <div class="content">
-                <h1>Portfolio</h1>
-                <ul id="portfolio">
-                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure
-                            game for Rhoss</a></li>
-                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game
-                            development on the web </a></li>
-                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and
-                            velocity applied to circle shapes...</a></li>
-                </ul>
-            </div>
-        </main>
+            <h3>Video Game</h3>
+            <ul id="portfolio">
+              <li>
+                <a href="update-me" target="_blank"
+                  >Video Game Library (GitHub)</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/pong/">Pong description here</a>
+              </li>
+              <li>
+                <a href="video-game-course/init-createjs/"
+                  >A CreateJS Mini-Project</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/calculate-distance/"
+                  >Calculating Distance : Are we there yet?</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/calculate-rotation/"
+                  >Calculate Rotation : Don't get dizzy</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/velocity-displacement/"
+                  >Velocity and Displacement : I. AM. SPEED.</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/collision/"
+                  >Collision : Watch your step</a
+                >
+              </li>
+              <li>
+                <a href="video-game-course/circular-attack-gamey/"
+                  >Asteroids Remake</a
+                >
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>
