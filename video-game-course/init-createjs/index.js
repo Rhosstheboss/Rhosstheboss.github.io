@@ -61,10 +61,10 @@
   }
 
   //variables that track movement
-  let eyeSpeed = 1;
+  let eyeSpeed = 5;
   let bounds1 = canvas.width;
   let bounds2 = canvas.width;
-  let mouthSpeed = 1;
+  let mouthSpeed = 5;
 
   /*
    * TODO 10: Implement an update Function, after making
