@@ -1,10 +1,10 @@
 // TODO 4: Add a parameter for your gaming library in the index.js module:
-(function(window, createjs, opspark) {
+(function(window, createjs, opspark, rhaussSausse) {
   // OUR MODULE CODE GOES BELOW HERE //
 
   console.log('index.js initialized!');
-  
-  /*
+  console.log(rhaussSausse)
+    /*
    * In this project, we'll use our getDistance() method to 
    * determine if the mouse is intersecting with a Shape.
    *
@@ -50,18 +50,23 @@
   textfield.y = canvas.height / 2 + 50;
   
   stage.addChild(shapeUp, shapeOver, textfield);
-  
+  console.log({shapeUp, stage})
   // The update() method is called 60 times a second //
   function update(event) {
     /*
      * TODO 5: use getDistance to calculate the distance between shapeUp and 
      * the mouse. Store the result in a variable called distance:
      */
+    var mouse = {
+      x : stage.mouseX,
+      y : stage.mouseY
+    }
+      var distance = getDistance(shapeUp, mouse)
     
     
     
     /*
-     * TODO 6: Check if the mouse is within the area of shapeUp, and set the 
+     *  PICK UP HERE NEXT WEEK *********** TODO 6: Check if the mouse is within the area of shapeUp, and set the 
      * alpha property of shapeUp accordingly:
      */
     
@@ -100,4 +105,4 @@
   // OUR MODULE CODE GOES ABOVE HERE //
   
 // TODO 3: Pass your gaming library into the index.js module:
-}(window, window.createjs, window.opspark));
+}(window, window.createjs, window.opspark, window.rhaussSausse));
