@@ -60,12 +60,14 @@
     update(event);
   }
 
+  var eye
   //variables that track movement
-  let eyeSpeed = 5;
-  let bounds1 = canvas.width;
-  let bounds2 = canvas.width;
-  let mouthSpeed = 5;
-
+  var eyeSpeed = 5;
+  var mouthSpeed = 5;
+  var bounds1 = canvas.width - 250;
+  var bounds2 = canvas.width;
+  var bounds3 = 0;
+  var bounds4 = 0;
   /*
    * TODO 10: Implement an update Function, after making
    * changes to assets, it must call stage.update();
@@ -74,11 +76,13 @@
     circleContainer.x += eyeSpeed;
     if (circleContainer.x > bounds1) {
       eyeSpeed *= -1;
+    } else if (circleContainer.x < bounds3) {
+      eyeSpeed *= -1;
     }
     rectContainer.x += mouthSpeed;
     if (rectContainer.x > bounds1) {
       mouthSpeed *= -1;
-    }else if (rectContainer.x > bounds2) {
+    } else if (rectContainer.x < bounds4) {
       mouthSpeed *= -1;
     }
     stage.update();
