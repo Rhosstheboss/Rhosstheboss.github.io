@@ -64,6 +64,7 @@
      * alpha property of shapeUp accordingly:
      */
     if ((mouse = radius - 1)) {
+      // how to get the color thingy
       shapeUp = color;red;
     }
 
