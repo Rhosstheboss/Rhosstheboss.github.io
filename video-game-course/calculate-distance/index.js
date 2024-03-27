@@ -31,6 +31,7 @@
    */
   shapeUp.graphics.beginFill("blue").drawCircle(0, 0, radius);
   shapeOver.graphics.beginFill("red").drawCircle(0, 0, radius);
+  shapeUp.alpha = 1;
   shapeOver.alpha = 0;
   shapeUp.x = shapeOver.x = canvas.width / 2;
   shapeUp.y = shapeOver.y = canvas.height / 2;
@@ -63,9 +64,14 @@
      *  PICK UP HERE NEXT WEEK *********** TODO 6: Check if the mouse is within the area of shapeUp, and set the
      * alpha property of shapeUp accordingly:
      */
-    if ((mouse = radius - 1)) {
-      // how to get the color thingy
-      shapeUp = color;red;
+
+    // check if mouse passes into the circle's radius and turn the circle red if that's true
+    if (distance < radius){
+      shapeUp.alpha = 0;
+      shapeOver.alpha = 1
+    } else {
+      shapeUp.alpha = 1;
+      shapeOver.alpha = 0
     }
 
     /*
