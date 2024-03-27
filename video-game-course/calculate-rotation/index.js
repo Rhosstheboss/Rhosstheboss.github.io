@@ -1,5 +1,5 @@
 // TODO 4: add a param for your game lib last //
-(function(window, opspark) {
+(function(window, createjs, opspark, rhausssausse) {
   console.log('index.js initialized!');
 
   const
@@ -16,10 +16,12 @@
   
   
   // TODO 5: Center the ship on the stage //
-  
+  ship.x = canvas.width/2
+  ship.y = canvas.height/2
 
+  //ask what todo here bc this should be working and isnt mwuah
   // TODO 6: Add the ship to the stage //
-  
+  stage.addchild(ship);
 
   
   function update(event) {
@@ -53,4 +55,4 @@
     .activateTick();
 
 // TODO 3: pass your game lib last with, window.my-game-lib //
-}(window, window.opspark));
+}(window, window.createjs, window.opspark, window.rhausssausse));

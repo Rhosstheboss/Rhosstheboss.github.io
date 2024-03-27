@@ -1,0 +1,34 @@
+{
+  "name": "RhaussSausse",
+  "main": "index.js",
+  "homepage": "https://github.com/Rhosstheboss/RhaussSausse",
+  "description": "gaming library for me xt",
+  "keywords": [
+    "Bhoss"
+  ],
+  "authors": [
+    "Rhosstheboss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "version": "1.2.0",
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.0",
+    "commit": "740dd1e30c519fc697b211d8982e85f9624b32b6"
+  },
+  "_source": "https://github.com/Rhosstheboss/RhaussSausse.git",
+  "_target": "^1.2.0",
+  "_originalSource": "https://github.com/Rhosstheboss/RhaussSausse.git",
+  "_direct": true
+}
