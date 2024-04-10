@@ -1,5 +1,5 @@
 // TODO 4: Change *my-game-lib* to the name of your game lib
-(function(window, opspark, *my-game-lib*) {
+(function(window, opspark, rhaussSausse) {
   const
     engine = opspark.V6().activateResize(),
     canvas = engine.getCanvas(),
@@ -8,7 +8,7 @@
     space = opspark.space;
 
   const ship = assets.makeShip('#4286f4');
-
+// DO TODO 7
   /*
    * The space module expects each body to implement an
    * update() method. On each tick, the space module loops
@@ -111,4 +111,4 @@
   }
   
   // TODO 3: replace *my-game-lib* with the name of your game lib //
-}(window, window.opspark, window.*my-game-lib*));
+}(window, window.opspark, window.rhaussSausse));
