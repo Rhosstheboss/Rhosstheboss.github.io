@@ -49,12 +49,14 @@
             const bodyB = active[j];
             
             // TODO 1: Calculate hit test components
-            
-            
+            var distanceX = bodyA.x - bodyB.x
+            var distanceY = bodyA.y - bodyB.y
+            var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
+            var minimumDistance = bodyA.radius + bodyB.radius
               
             // TODO 2: Do collision check: how do we know if bodies are colliding?
-            if(/* replace with collision check */ false) {
-              // console.log('hit!');
+             if(bodyA < bodyB) {
+              console.log('hit!');
               
               // TODO 3: Calculate springToX and springToY 
               
@@ -78,4 +80,4 @@
       }
     };
   };
-}(window, window.opspark, window.opspark.racket));
+}(window, window.opspark, window.opspark.racket, window.rhaussSausse));

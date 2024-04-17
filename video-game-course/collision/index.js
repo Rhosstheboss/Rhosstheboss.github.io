@@ -26,4 +26,4 @@
       playerOne.update)
     .activateTick();
   
-}(window, window.opspark, window.opspark.racket));
+}(window, window.opspark, window.opspark.racket, window.rhaussSausse));
