@@ -46,10 +46,10 @@
         if (this.integrity > 0) {
           this.integrity -= impact;
           messenger.dispatch({ type: 'DAMAGE', source: 'ship', target: this });
-          if (this.integrity <= 0) {
+          // if (this.integrity <= 0) {
             explode();
             messenger.dispatch({ type: 'EXPLOSION', source: 'ship', target: this });
-          }
+          // }
         }
       }
 

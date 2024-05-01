@@ -49,6 +49,11 @@
         phyz.reboundCircularAssetInArea(this, canvas);
       }
 
+      function updateDeathOrb(event) {
+        phyz.updateVelocity(this, 0, 0);
+        phyz.reboundCircularAssetInArea(this, canvas);
+      }
+
       function updateProjectile(impact) {
         phyz.reboundCircularAssetInArea(this, canvas);
       }
@@ -147,6 +152,20 @@
           // orb.cache(-rad, -rad, rad * 2, rad * 2);
           
           return orb;
+        },
+        //TODO : Rhoss make working death orbs!!
+        makeDeathOrb() {
+          const deathOrb = draw.randomCircleInArea(canvas, false, true, '#999', 2);
+          // console.log(`rad: ${deathOrb.radius}`);
+          // console.log(`den: ${deathOrb.radius / 20 * 0.5}`);
+          Object.assign(deathOrb, phyz.makeBody('deathOrb', { 
+            density: deathOrb.radius / 20 * 0.5,
+            volatility: deathOrb.radius * 0.0001,
+          }));
+          phyz.addRandomVelocity(deathOrb, canvas);
+          deathOrb.update = updateDeathOrb;
+          
+          return deathOrb;
         },
         centerOnStage,
       };
