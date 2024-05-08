@@ -39,7 +39,7 @@
           case 'orb':
             active.forEach(hud => event.bodies.forEach(orb => hud.updateOf(orb.radius)));
             break;
-          
+
           default:
             // code
         }

@@ -44,7 +44,7 @@
             FIRE: controls.KEYS.SHIFT_LEFT,
           })
           .spawn("#f44242"),
-        orb = opspark.playa.orb(assets, fx, messenger).spawn(25);
+        orb = opspark.playa.orb(assets, fx, messenger).spawn(2);
 
       game.view.addChild(view.container);
 
@@ -60,7 +60,7 @@
             messenger.off("EXPLOSION", onExplosion);
             setTimeout(() => game.end({ message: "GAME OVER" }), 2000);
             break;
-          case "ship" && "orb":
+          case "ship" && "Orb":
             messenger.off("EXPLOSION", onExplosion);
             setTimeout(() => game.end({ message: "GAME OVER" }), 2000);
             break;

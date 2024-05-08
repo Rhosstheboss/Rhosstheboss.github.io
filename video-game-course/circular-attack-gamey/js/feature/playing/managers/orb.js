@@ -2,7 +2,7 @@
   const Proton = window.Proton;
 
   // create a namespace for the orb manager //
-  var deathOrb
+  
   _.set(
     opspark,
     "playa.orb",
@@ -65,11 +65,6 @@
         const orb = assets.makeOrb();
         orb.handleCollision = handleCollision;
         return orb;
-      }
-      function makeObject() {
-        const deathOrb = assets.makeDeathOrb();
-        deathOrb.handleCollision = handleCollision;
-        return deathOrb;
       }
 
       function handleCollision(impact, body) {
