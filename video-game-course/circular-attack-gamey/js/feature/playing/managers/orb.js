@@ -61,6 +61,7 @@
           },
         };
 
+
       function makeObject() {
         const orb = assets.makeOrb();
         orb.handleCollision = handleCollision;
@@ -80,7 +81,6 @@
           console.log(impact);
           this.integrity -= impact;
           if (this.integrity <= 0) {
-            explosion();
             fx.makeEmitter(2, 3, "rgba(214, 36, 84, 0.2)", null, [
               new Proton.RandomDrift(5, 0, 0.35),
             ]).emit({ x: this.x, y: this.y }, 0.5);

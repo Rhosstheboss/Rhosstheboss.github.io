@@ -45,6 +45,9 @@
     function updateOrb(event) {
       phyz.updateVelocity(this, 0, 0);
       phyz.reboundCircularAssetInArea(this, canvas);
+      
+      //grows orbs invisibly
+      this.radius++;
     }
 
     function updateProjectile(impact) {
@@ -157,9 +160,10 @@
         return ship;
       },
       makeOrb() {
-        const orb = draw.randomCircleInArea(canvas, false, true, "#000", 100);
+        const orb = draw.randomCircleInArea(canvas, false, true, "#000", 2);
         // console.log(`rad: ${orb.radius}`);
         // console.log(`den: ${orb.radius / 20 * 0.5}`);
+
         Object.assign(
           orb,
           phyz.makeBody("orb", {
@@ -178,7 +182,6 @@
 
         return orb;
       },
-      //TODO : Rhoss make working death orbs!!
 
       centerOnStage,
     };
